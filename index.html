@@ -1,0 +1,739 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Oliwia Bartosiewicz Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Portfolio of Oliwia Bartosiewicz: software projects, skills and contact details.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a full-bleed night-plum hero with scattered doodles and a laptop centrepiece, then calm content sections in one column. */
+:root {
+  --bg: #fbf5f9;
+  --surface: #ffffff;
+  --ink: #1b1020;
+  --muted: #6a5772;
+  --line: #ecdbe8;
+  --accent: #b5207c;
+  --accent-2: #6b3cc4;
+  --accent-ink: #ffffff;
+  --mark: #ff6fb5;
+  --ph-bg: #f8ecf5;
+  --ph-line: #d9a2cb;
+  /* hero band stays dark in both themes */
+  --hero-base: #120a17;
+  --hero-ink: #f8eef8;
+  --hero-dim: #c9b5cf;
+  --pink: #ff7cc0;
+  --lilac: #b897ff;
+  --term-bg: #0d0811;
+  --term-ink: #eadff0;
+  --term-dim: #8f7d99;
+  --display: "Sora", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --radius: 20px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d0911; --surface: #181120; --ink: #f5edf7; --muted: #b4a3bc; --line: #2d2236;
+    --accent: #ff6fb5; --accent-2: #b48cff; --accent-ink: #16070f; --mark: #ff6fb5;
+    --ph-bg: #21172a; --ph-line: #6e4a7e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d0911; --surface: #181120; --ink: #f5edf7; --muted: #b4a3bc; --line: #2d2236;
+  --accent: #ff6fb5; --accent-2: #b48cff; --accent-ink: #16070f; --mark: #ff6fb5;
+  --ph-bg: #21172a; --ph-line: #6e4a7e;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--mark); outline-offset: 2px; border-radius: 6px; }
+.pad { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1080px; margin: 0 auto; }
+
+/* Header */
+.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--hero-base) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, .07);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.logo { font-family: var(--display); font-weight: 800; font-size: 24px; color: var(--hero-ink); text-decoration: none; letter-spacing: -0.03em; }
+.logo span { color: var(--pink); }
+nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+nav a { color: var(--hero-dim); text-decoration: none; font-weight: 500; font-size: 15px; padding: 6px 12px; border-radius: 999px; transition: color .15s, background .15s; }
+nav a:hover, nav a.active { color: var(--hero-ink); background: rgba(255, 255, 255, .08); }
+.icon-btn {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  width: 38px; height: 38px; border-radius: 999px; cursor: pointer; display: grid; place-items: center; flex: none;
+}
+.top .icon-btn { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color: var(--hero-ink); margin-left: 6px; }
+.icon-btn svg { width: 18px; height: 18px; }
+@media (max-width: 620px) { nav a.hide-sm { display: none; } }
+
+/* Hero band */
+.hero-band {
+  position: relative; overflow: hidden; color: var(--hero-ink);
+  background:
+    radial-gradient(60% 55% at 85% 10%, rgba(140, 60, 200, .55), transparent 70%),
+    radial-gradient(55% 60% at 8% 85%, rgba(214, 51, 140, .45), transparent 70%),
+    radial-gradient(40% 40% at 50% 70%, rgba(255, 124, 192, .18), transparent 70%),
+    var(--hero-base);
+}
+.hero { position: relative; z-index: 1; text-align: center; padding-block: 64px 0; display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; }
+.hero > * { max-width: 100%; min-width: 0; }
+.eyebrow { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.hero .eyebrow { color: var(--pink); display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: rgba(255, 124, 192, .1); border: 1px solid rgba(255, 124, 192, .25); text-wrap: balance; line-height: 1.5; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(44px, 7.5vw, 84px); line-height: 1; letter-spacing: -0.045em; margin: 22px 0 28px; text-wrap: balance; }
+h1 .hl { position: relative; white-space: nowrap; background: linear-gradient(100deg, var(--pink), var(--lilac)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+h1 .hl::after {
+  content: ""; position: absolute; left: 2%; right: 4%; bottom: -0.16em; height: 0.22em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 20' preserveAspectRatio='none'%3E%3Cpath d='M2 14 C 40 4, 70 18, 105 9 S 170 4, 198 12' fill='none' stroke='%23ff7cc0' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+.role { font-family: var(--mono); font-size: 16px; color: var(--hero-dim); min-height: 1.6em; }
+.role .caret { display: inline-block; width: 0.55em; height: 1.1em; background: var(--pink); vertical-align: -0.2em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.lede { color: var(--hero-ink); max-width: 46ch; margin: 18px auto 28px; font-size: clamp(17px, 2.1vw, 20px); line-height: 1.65; text-wrap: pretty; }
+.lede a.u { color: var(--hero-ink); text-decoration: underline; text-decoration-color: var(--pink); text-decoration-thickness: 2px; text-underline-offset: 4px; transition: color .15s; }
+.lede a.u:hover { color: var(--pink); }
+.lede .ph { color: var(--hero-dim); background: rgba(255,255,255,.06); border-color: rgba(255,124,192,.5); }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; font: 600 15px var(--body);
+  padding: 11px 20px; border-radius: 999px; text-decoration: none; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-1px); border-color: var(--accent); }
+.btn.primary { background: linear-gradient(100deg, #e0408f, #8a4ee0); border-color: transparent; color: #fff; box-shadow: 0 10px 26px -12px rgba(224, 64, 143, .8); }
+.btn.primary:hover { box-shadow: 0 14px 30px -12px rgba(224, 64, 143, .95); }
+.hero .btn:not(.primary) { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.2); color: var(--hero-ink); }
+.hero .btn.is-ph { border-style: dashed; color: var(--hero-dim); }
+.btn svg { width: 16px; height: 16px; }
+
+/* Laptop centrepiece */
+.desk { position: relative; width: min(640px, 100%); margin-top: 52px; }
+.desk::before {
+  content: ""; position: absolute; inset: 8% -14% -10%; z-index: -1;
+  background:
+    radial-gradient(closest-side at 30% 45%, rgba(255, 124, 192, .55), transparent),
+    radial-gradient(closest-side at 72% 55%, rgba(184, 151, 255, .5), transparent);
+  filter: blur(18px);
+}
+.screen { background: var(--term-bg); color: var(--term-ink); border: 12px solid #2a1d31; border-bottom-width: 16px; border-radius: 18px 18px 6px 6px; text-align: left; font-family: var(--mono); font-size: 13.5px; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .8); overflow: hidden; }
+.base { height: 16px; width: 116%; margin-left: -8%; background: linear-gradient(#4a3654, #2a1d31); border-radius: 2px 2px 22px 22px; position: relative; }
+.base::after { content: ""; position: absolute; left: 50%; top: 0; width: 18%; height: 6px; transform: translateX(-50%); background: #1d1322; border-radius: 0 0 8px 8px; }
+.term-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; border-bottom: 1px solid rgba(255,255,255,.07); }
+.term-bar i { width: 10px; height: 10px; border-radius: 50%; }
+.term-bar i:nth-child(1) { background: #ff6f91; } .term-bar i:nth-child(2) { background: #ffb3d9; } .term-bar i:nth-child(3) { background: #b897ff; }
+.term-bar span { margin-left: 8px; color: var(--term-dim); font-size: 12px; }
+.term-body { padding: 16px 16px 18px; overflow-x: auto; }
+.term-line { white-space: nowrap; }
+.screen .prompt { color: var(--pink); }
+.screen .dim { color: var(--term-dim); }
+.screen .hash { color: #ffb3d9; }
+.screen .ref { color: var(--lilac); }
+.commit { display: block; width: 100%; text-align: left; background: none; border: 0; color: inherit; font: inherit; padding: 5px 8px; margin: 2px -8px; border-radius: 6px; cursor: pointer; white-space: nowrap; }
+.commit:hover, .commit:focus-visible { background: rgba(255, 124, 192, .12); }
+.term-hint { margin-top: 12px; color: var(--term-dim); font-size: 12px; }
+
+/* Desk props beside the laptop */
+.prop { position: absolute; bottom: 4px; }
+.prop.mug { right: -24%; width: 84px; }
+.prop.notes { left: -24%; width: 96px; bottom: 10px; }
+@media (max-width: 860px) { .prop { display: none; } }
+
+/* Floating doodles */
+.doodles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.d { position: absolute; color: var(--pink); opacity: .85; animation: drift 7s ease-in-out infinite; }
+.d.l { color: var(--lilac); }
+.d.w { color: #fff; opacity: .7; }
+.d svg { display: block; width: 100%; height: 100%; }
+.d.code { font: 600 22px var(--mono); width: auto; height: auto; }
+@keyframes drift { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-10px) rotate(6deg); } }
+@media (max-width: 700px) { .d.hide-sm { display: none; } }
+
+/* Sections */
+main section { padding-block: 72px; scroll-margin-top: 72px; }
+main section + section { border-top: 1px solid var(--line); }
+.sec-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 30px; }
+.sec-head .eyebrow::before, .kicker::before { content: "✦ "; color: var(--accent-2); }
+.kicker { font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(30px, 4.4vw, 44px); letter-spacing: -0.035em; line-height: 1.05; margin: 8px 0 0; text-wrap: balance; }
+
+/* Filters */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { font: 500 13px var(--mono); padding: 6px 14px; border-radius: 999px; cursor: pointer; border: 1px solid var(--line); background: var(--surface); color: var(--muted); }
+.chip[aria-pressed="true"] { background: linear-gradient(100deg, #e0408f, #8a4ee0); color: #fff; border-color: transparent; }
+
+/* Project cards */
+.projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+@media (max-width: 920px) { .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .projects { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  display: flex; flex-direction: column; overflow: hidden; min-width: 0;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, opacity .2s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 22px 44px -26px color-mix(in srgb, var(--accent-2) 70%, transparent); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.card.flash { border-color: var(--mark); box-shadow: 0 0 0 3px color-mix(in srgb, var(--mark) 45%, transparent); }
+.card.dim { opacity: .35; }
+.shot { aspect-ratio: 16 / 10; max-width: 100%; background: var(--ph-bg); position: relative; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shot.empty { display: grid; place-items: center; border-bottom: 2px dashed var(--ph-line); text-align: center; padding: 16px; }
+.shot.empty svg { width: 30px; height: 30px; color: var(--ph-line); }
+.shot.empty small { display: block; font-family: var(--mono); font-size: 12px; color: var(--muted); margin-top: 6px; }
+.card-body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.card-meta { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.status { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent-2) 16%, transparent); color: var(--ink); white-space: nowrap; }
+.status.done { background: color-mix(in srgb, var(--mark) 22%, transparent); }
+.card h3 { font-family: var(--display); font-weight: 700; font-size: 22px; letter-spacing: -0.025em; margin: 0; line-height: 1.15; }
+.card p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 2px; }
+.tag { font: 500 12px var(--mono); padding: 3px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 9%, var(--surface)); border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line)); color: var(--ink); }
+.card-actions { display: flex; gap: 8px; margin-top: auto; padding-top: 8px; flex-wrap: wrap; }
+.card-actions .btn { padding: 8px 14px; font-size: 14px; }
+.ph { color: var(--muted); font-style: italic; border: 1.5px dashed var(--ph-line); background: var(--ph-bg); border-radius: 8px; padding: 2px 8px; }
+.btn.is-ph { border-style: dashed; border-color: var(--ph-line); color: var(--muted); background: var(--ph-bg); }
+
+/* Modal */
+dialog { width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 48px); padding: 0; border: 1px solid var(--line); border-radius: 22px; background: var(--surface); color: var(--ink); }
+dialog::backdrop { background: rgba(14, 6, 18, .6); backdrop-filter: blur(4px); }
+.dlg-inner { padding: 24px; display: grid; gap: 14px; }
+.dlg-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; }
+.dlg-head h3 { font-family: var(--display); font-size: 30px; letter-spacing: -0.03em; margin: 4px 0 0; line-height: 1.1; }
+dialog .shot { border-radius: 12px; overflow: hidden; }
+dialog ul { margin: 0; padding-left: 20px; color: var(--muted); }
+dialog li::marker { color: var(--accent); }
+dialog h4 { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 6px 0 0; }
+
+/* About + skills */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.about > * { min-width: 0; }
+@media (max-width: 760px) { .about { grid-template-columns: 1fr; gap: 36px; } .hero { padding-block: 48px 0; } }
+.about p { max-width: 60ch; }
+.skill-group { display: grid; gap: 10px; margin-bottom: 22px; }
+.skill-group h4 { margin: 0; font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.skill-list { display: flex; gap: 8px; flex-wrap: wrap; }
+.skill { font: 500 14px var(--body); padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); cursor: default; transition: border-color .15s, color .15s; }
+.skill:hover, .skill.lit { border-color: var(--accent); color: var(--accent); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 18px; display: grid; gap: 20px; border-left: 2px solid color-mix(in srgb, var(--accent) 30%, var(--line)); }
+.timeline li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -25px; top: 7px; width: 12px; height: 12px; border-radius: 50%; background: linear-gradient(135deg, #e0408f, #8a4ee0); }
+.timeline li > * { min-width: 0; }
+.when { font-family: var(--mono); font-size: 13px; color: var(--muted); padding-top: 3px; font-variant-numeric: tabular-nums; }
+.timeline strong { display: block; }
+.timeline span { color: var(--muted); font-size: 15.5px; }
+@media (max-width: 480px) { .timeline li { grid-template-columns: 1fr; gap: 2px; } }
+
+/* Contact */
+.contact-band { border-radius: 28px; padding: clamp(24px, 4vw, 44px); color: var(--hero-ink); position: relative; overflow: hidden;
+  background: radial-gradient(70% 90% at 100% 0%, rgba(140, 60, 200, .6), transparent 70%), radial-gradient(60% 80% at 0% 100%, rgba(214, 51, 140, .5), transparent 70%), var(--hero-base); }
+.contact-band h2 { color: var(--hero-ink); }
+.contact-band .kicker { color: var(--pink); }
+.contact-band .kicker::before { color: var(--lilac); }
+.contact-band p.sub { color: var(--hero-dim); margin: 10px 0 26px; max-width: 48ch; }
+.contact { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .contact { grid-template-columns: 1fr; } }
+.contact-item { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; padding: 18px; display: grid; gap: 8px; min-width: 0; }
+.contact-item .label { font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; color: var(--pink); }
+.contact-item .value { font-weight: 600; overflow-wrap: anywhere; user-select: all; }
+.contact-item .ph { color: var(--hero-dim); background: rgba(255,255,255,.05); border-color: rgba(255,124,192,.45); }
+.contact-item .btn { justify-self: start; padding: 7px 14px; font-size: 14px; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.2); color: var(--hero-ink); }
+.contact-item .btn.primary { background: linear-gradient(100deg, #e0408f, #8a4ee0); border-color: transparent; }
+footer { padding-block: 28px 40px; color: var(--muted); font-size: 14px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+.toast { position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 20px); opacity: 0; background: var(--ink); color: var(--bg); padding: 10px 18px; border-radius: 999px; font-weight: 600; font-size: 14px; transition: opacity .2s, transform .2s; pointer-events: none; z-index: 50; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+</style>
+</head><body>
+
+<div class="hero-band" id="home">
+  <header class="top pad">
+    <div class="wrap">
+      <a class="logo" href="#home">oliwia<span>.</span></a>
+      <nav aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#about" class="hide-sm">About</a>
+        <a href="#contact">Contact</a>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="doodles" aria-hidden="true">
+    <!-- sparkles -->
+    <span class="d" style="left:7%;top:22%;width:34px;height:34px"><svg viewBox="0 0 24 24"><path d="M12 1c.6 5.6 4.4 9.4 11 11-6.6 1.6-10.4 5.4-11 11-.6-5.6-4.4-9.4-11-11 6.6-1.6 10.4-5.4 11-11z" fill="currentColor"/></svg></span>
+    <span class="d w" style="left:90%;top:20%;width:22px;height:22px;animation-delay:-2s"><svg viewBox="0 0 24 24"><path d="M12 1c.6 5.6 4.4 9.4 11 11-6.6 1.6-10.4 5.4-11 11-.6-5.6-4.4-9.4-11-11 6.6-1.6 10.4-5.4 11-11z" fill="currentColor"/></svg></span>
+    <span class="d l hide-sm" style="left:84%;top:62%;width:30px;height:30px;animation-delay:-4s"><svg viewBox="0 0 24 24"><path d="M12 1c.6 5.6 4.4 9.4 11 11-6.6 1.6-10.4 5.4-11 11-.6-5.6-4.4-9.4-11-11 6.6-1.6 10.4-5.4 11-11z" fill="currentColor"/></svg></span>
+    <!-- hand-drawn stars -->
+    <span class="d l" style="left:15%;top:48%;width:44px;height:44px;animation-delay:-1s"><svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M25 4 31 19 47 20 34 30 39 46 25 37 11 46 16 30 3 20 19 19Z"/></svg></span>
+    <span class="d hide-sm" style="left:76%;top:32%;width:36px;height:36px;animation-delay:-3s"><svg viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M25 4 31 19 47 20 34 30 39 46 25 37 11 46 16 30 3 20 19 19Z"/></svg></span>
+    <!-- squiggles -->
+    <span class="d l hide-sm" style="left:2%;top:66%;width:120px;height:60px;animation-delay:-5s"><svg viewBox="0 0 120 60" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 40c14-26 26 18 40-6s24 20 38-4 22 14 34-10"/></svg></span>
+    <span class="d hide-sm" style="left:88%;top:78%;width:90px;height:70px;animation-delay:-2.5s"><svg viewBox="0 0 90 70" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 60C20 10 50 70 60 30S86 12 84 6"/></svg></span>
+    <span class="d w hide-sm" style="left:24%;top:12%;width:70px;height:40px;animation-delay:-6s"><svg viewBox="0 0 70 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 30c8-20 18 10 26-6s18 8 22-6 10 4 14-8"/></svg></span>
+    <!-- dots -->
+    <span class="d w" style="left:32%;top:40%;width:6px;height:6px;animation-delay:-1.5s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg></span>
+    <span class="d" style="left:68%;top:14%;width:8px;height:8px;animation-delay:-3.5s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg></span>
+    <span class="d w hide-sm" style="left:6%;top:86%;width:7px;height:7px"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg></span>
+    <span class="d l" style="left:94%;top:44%;width:7px;height:7px;animation-delay:-2s"><svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="currentColor"/></svg></span>
+    <!-- code marks -->
+    <span class="d code l hide-sm" style="left:10%;top:34%;animation-delay:-4.5s">&lt;/&gt;</span>
+    <span class="d code hide-sm" style="left:82%;top:48%;animation-delay:-1.2s">{ }</span>
+    <span class="d code w hide-sm" style="left:20%;top:76%;animation-delay:-3.2s">;</span>
+  </div>
+
+  <div class="hero wrap pad">
+    <div class="eyebrow" id="hero-eyebrow">Graduate Software Engineer</div>
+    <h1 id="hero-name">Hi, I'm <span class="hl">Oliwia!</span></h1>
+    <div class="role" aria-live="polite"><span id="role-text"></span><span class="caret" aria-hidden="true"></span></div>
+    <p class="lede" id="hero-lede"></p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">See my projects
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+      <a class="btn" id="hero-github" href="#" target="_blank" rel="noopener">GitHub profile</a>
+    </div>
+
+    <div class="desk">
+      <svg class="prop notes" viewBox="0 0 100 90" aria-hidden="true">
+        <rect x="14" y="14" width="64" height="64" rx="4" fill="#b897ff" transform="rotate(-8 46 46)"/>
+        <rect x="24" y="8" width="64" height="64" rx="4" fill="#ff9ccf" transform="rotate(6 56 40)"/>
+        <path d="M38 30h34M38 42h28M38 54h20" stroke="#7a2257" stroke-width="3" stroke-linecap="round" transform="rotate(6 56 40)"/>
+      </svg>
+      <div class="screen" aria-label="Project history">
+        <div class="term-bar"><i></i><i></i><i></i><span>~/oliwia/portfolio</span></div>
+        <div class="term-body">
+          <div class="term-line"><span class="prompt">$</span> git log --oneline --projects</div>
+          <div id="term-commits" style="margin-top:8px"></div>
+          <div class="term-hint"># click a line to jump to that project</div>
+        </div>
+      </div>
+      <div class="base"></div>
+      <svg class="prop mug" viewBox="0 0 90 100" aria-hidden="true">
+        <path d="M30 6c-6 8 6 12 0 20M46 4c-6 8 6 12 0 20" stroke="#f8eef8" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".6"/>
+        <path d="M66 46h6a12 12 0 0 1 0 24h-6" stroke="#e0408f" stroke-width="7" fill="none"/>
+        <path d="M14 34h56v44a18 18 0 0 1-18 18H32a18 18 0 0 1-18-18z" fill="#e0408f"/>
+        <path d="M30 60l6 6 12-14" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<main class="wrap pad">
+  <section id="projects">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Selected work</div>
+        <h2>Projects</h2>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects by technology"></div>
+    </div>
+    <div class="projects" id="project-grid"></div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <div>
+        <div class="kicker">About me</div>
+        <h2>A bit about me</h2>
+        <div id="about-text"></div>
+        <h4 class="kicker" style="margin:30px 0 16px">Experience &amp; education</h4>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+      <div>
+        <div class="kicker">Toolbox</div>
+        <h2>Skills</h2>
+        <p style="color:var(--muted);margin:10px 0 22px;font-size:15.5px">Hover a skill to see which projects use it.</p>
+        <div id="skills"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-band">
+      <div class="kicker">Get in touch</div>
+      <h2>Let's work together</h2>
+      <p class="sub">I’m keen to start my career in tech, whether in software engineering, project management or
+        AI. The best way to reach me is by email or LinkedIn.</p>
+      <div class="contact" id="contact-list"></div>
+    </div>
+  </section>
+
+  <footer>
+    <span id="footer-name"></span>
+    <a href="#home">Back to top</a>
+  </footer>
+</main>
+
+<dialog id="project-dialog" aria-labelledby="dlg-title">
+  <div class="dlg-inner" id="dlg-content"></div>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* =====================================================================
+   EDIT YOUR DETAILS HERE
+   Everything on the page comes from the two objects below.
+   Leave a field as "" and the site shows a dashed placeholder instead.
+   ===================================================================== */
+
+const PROFILE = {
+  name: "Oliwia Bartosiewicz",
+  headline: "Graduate Software Engineer · MSc Software Engineering",
+  roles: ["Graduate software engineer", "C# developer", "JavaScript developer"],
+  // Wrap words in [square brackets](#link) to show them as underlined highlight links.
+  intro: "A former finance analyst turned [software engineer](#about), building [practical C# and Java applications](#projects) backed by [SQL and Firebase](#about). I enjoy making software that is simple to use.",
+  about: [
+    "A former finance analyst turned software engineer, I bring a strong analytical foundation and a detail-oriented mindset to every project I build. My background in data analysis and process automation sparked a passion for creating smart, efficient software.",
+    "Having completed a master's in Software Engineering, I've built solid experience in C#, Java, SQL and Firebase, with a focus on practical, user-driven applications. I enjoy turning complex ideas into technology that works in the real world."
+  ],
+  githubProfile: "https://github.com/oliwiabartosiewicz",
+  email: "oliwiabartosiewicz@hotmail.com",    
+  linkedin: "https://www.linkedin.com/in/oliwia-bartosiewicz",
+  cv: "",            // link to your CV, e.g. "cv.pdf" (put the file next to index.html)
+  timeline: [
+    { when: "2024-2025",  title: "MSc Software Engineering", detail: "Nottingham Trent University" }, // add your years, e.g. "2024 – 2025"
+    { when: "2018-2021",  title: "BA Economics with International Finance and Banking", detail: "Nottingham Trent University" }, // add years and university
+    { when: "November 2025 - November 2026",  title: "Accounts Payable Executive", detail: "Kent County Council" },
+    { when: "November 2022 - October 2024",  title: "Payments Analyst", detail: "One Savings Bank" },
+    { when: "June 2020 - April 2022",  title: "Finance Analyst", detail: "Evri" } // add company and dates
+  ],
+  skills: {
+    "Languages": ["C#", "Java", "SQL", "HTML", "CSS"],
+    "Platforms & data": [".NET", "Android", "PostgreSQL", "Firebase"],
+    "Tools": ["Git", "GitHub", "JetBrains Rider"]
+  }
+};
+
+const PROJECTS = [
+  {
+    title: "Trackie – Receipt & Spending Tracker",
+    year: "2025 University project",
+    status: "Complete",
+    summary: "An Android app that turns photos of receipts into a spending tracker, reading each receipt automatically and sorting it into categories so you can see where your money goes each month.",
+    description: "Built in Java with Android Studio. Users sign up and log in with Firebase Authentication, then take a photo of a receipt or upload a screenshot. Google ML Kit text recognition reads the receipt, and my own parsing code uses regular expressions to pull out the date and total. A keyword classifier sorts each receipt into a category, like Food, Eating Out, Shopping or Health and Beauty, based on the shop name and items. Each receipt image is saved to Firebase Storage and its details to Cloud Firestore. The home screen shows this month's total spending with a pie chart by category, and the Receipts screen lists every scanned receipt with its date, total and category. Users can also view and edit their profile.",
+    features: [
+      "Scan receipts with the camera or upload a screenshot",
+      "Automatically reads the date and total from receipt text using OCR",
+      "Sorts spending into categories automatically",
+      "Monthly spending dashboard with a category pie chart",
+      "Receipt history saved securely per user in Firebase"
+    ],
+    tech: ["Java", "Android", "Google ML Kit (OCR)", "Firebase Auth", "Cloud Firestore", "Firebase Storage", "MPAndroidChart"],
+    image: "images/trackie.svg",
+    codeUrl: "https://github.com/oliwiabartosiewicz/FinancialTracking",
+    liveUrl: ""
+  },
+  {
+    title: "Booking Application",
+    year: "2025 University project",
+    status: "Complete",
+    summary: "An Android app for a nail salon, LiwsNailz, where customers can create an " +
+            "account, browse nail designs and book or cancel appointments in real time.",
+    description: "Built in Java with Android Studio for a university module. " +
+            "Customers sign up and log in with Firebase Authentication. Their details and " +
+            "bookings are stored in Cloud Firestore. On the booking screen, the user picks a " +
+            "date on a calendar and sees only the time slots still free that day. Confirming a " +
+            "slot books it and removes it from availability, so two people can't book the same " +
+            "time. From their home screen, customers can see their upcoming appointments and " +
+            "cancel one, which puts the slot back on the calendar. The app also has a gallery" +
+            " of nail designs grouped by style, and an About Us page with opening hours, an " +
+            "embedded Google Map and one-tap buttons to call, email or get directions.",
+    features: [
+      "Sign-up and login with Firebase Authentication",
+      "Calendar booking that shows live available time slots",
+      "View and cancel upcoming appointments, with cancelled slots returned to the calendar",
+      "Design gallery and About Us page with Google Maps directions, plus tap-to-call and tap-to-email"
+    ],
+    tech: ["Java", "Android", "Firebase Auth", "Cloud Firestore", "Google Maps API"],
+    image: "images/booking-app.svg",
+    codeUrl: "https://github.com/oliwiabartosiewicz/NailBookingApp",
+    liveUrl: ""
+  },
+  {
+    title: "Calculator",
+    year: "2026",
+    status: "Complete",
+    summary: "A menu-driven console calculator in C# with 13 operations, from basic arithmetic to trigonometry, and a running history of results.",
+    description: "A .NET 8 console application that goes beyond the four basic operations. Users pick from a numbered menu covering powers, square roots, percentages, averages, factorials, trigonometry and rounding. Every input is validated, so the program never crashes on bad input, and each successful calculation is saved to a history the user can view or clear.",
+    features: [
+      "13 operations including powers, square root, factorial, sine, cosine and tangent",
+      "Input validation with TryParse that rejects text, NaN and infinity",
+      "Handles edge cases: division by zero, negative square roots and undefined tangents",
+      "Averages and largest/smallest across any number of values",
+      "Calculation history the user can view or clear"
+    ],
+    tech: ["C#", ".NET"],
+    image: "images/acalculator.svg",
+    codeUrl: "https://github.com/oliwiabartosiewicz/ACalculator",
+    liveUrl: ""
+  },
+  {
+    title: "Project Management Program",
+    year: "2025 University project",
+    status: "Complete",
+    summary: "A C# project management application built with .NET 8 and PostgreSQL, " +
+            "featuring user authentication, role-based access, project and task management," +
+            " comments and email notifications.",
+    description: "A .NET 8 application designed to organise and manage projects, users and tasks through a " +
+            "PostgreSQL relational database. The system supports two user roles, super_admin and user, with " +
+            "role-based permissions and secure password hashing. Users can manage projects, track task " +
+            "statuses, assign work, and communicate through task comments. The application uses Npgsql " +
+            "to interact directly with PostgreSQL through SQL queries, without relying on Entity Framework" +
+            " Core. It also includes an email notification feature using Gmail SMTP.",
+
+        features: [
+          " User registration and authentication with SHA-256 password hashing",
+          " Role-based access control with super_admin and user permissions",
+          " Project creation and management with progress tracking",
+          " Task management with assignment and status updates",
+          " Task comments to support team communication and collaboration",
+          " Email notifications integrated using Gmail SMTP",
+          " PostgreSQL database integration using Npgsql and direct SQL queries"],
+    tech: ["C#", ".NET 8", "PostgreSQL", "Npgsql", "SQL", "Gmail SMTP"],
+    image: "images/project-management.svg",
+    codeUrl: "https://github.com/oliwiabartosiewicz/ProjectManagementProgram.git",
+    liveUrl: ""
+  },
+  {
+    title: "Guessing Game",
+    year: "2025 University project",
+    status: "Complete",
+    summary: "A console memory card game in C# where players flip pairs of hidden cards to find all the matches before they run out of guesses.",
+    description: "Built for my Fundamentals of Software Programming module at NTU. The game reads its card symbols from a text file, shuffles them onto a 4×4 board and hides them face down. Players pick two cards at a time by row and column. Matching pairs stay revealed and mismatches flip back over. The number of guesses allowed is set in a config file, and when a player wins, their name and score are saved so future players can see the leaderboard. All input is validated, so typing letters or numbers outside the board doesn't crash the game.",
+    features: [
+      "Randomly shuffled 4×4 board loaded from a text file",
+      "Guess limit set in a config file",
+      "Saves player names and scores and shows previous results",
+      "Input validation for every row and column choice"
+    ],
+    tech: ["C#", ".NET 8", "Console app", "File I/O"],
+    image: "images/memory-game.svg",
+    codeUrl: "https://github.com/oliwiabartosiewicz/GuessingGame",
+    liveUrl: ""
+  }
+  
+];
+
+/* ===================== No need to edit below this line ===================== */
+
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const ph = text => `<span class="ph">${esc(text)}</span>`;
+const val = (v, placeholder) => v ? esc(v) : ph(placeholder);
+const filled = arr => (arr || []).filter(Boolean);
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const icons = {
+  github: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.8 18.3 5.1 18.3 5.1c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>',
+  ext: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>',
+  image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'
+};
+
+function shot(p, i) {
+  if (p.image) return `<div class="shot"><img src="${esc(p.image)}" alt="Screenshot of ${esc(p.title || "project " + (i + 1))}" loading="lazy"></div>`;
+  return `<div class="shot empty"><div>${icons.image}<small>Add a screenshot<br>images/project-${i + 1}.png</small></div></div>`;
+}
+
+function linkBtn(url, label, icon, phLabel) {
+  if (url) return `<a class="btn" href="${esc(url)}" target="_blank" rel="noopener">${icon} ${label}</a>`;
+  return `<span class="btn is-ph" title="Add this link in PROJECTS">${icon} ${phLabel}</span>`;
+}
+
+/* Hero */
+function renderHero() {
+  $("#hero-eyebrow").textContent = PROFILE.headline;
+  const first = PROFILE.name.split(" ")[0];
+  $("#hero-name").innerHTML = `Hi, I'm <span class="hl">${esc(first)}!</span>`;
+  $("#hero-lede").innerHTML = PROFILE.intro
+    ? esc(PROFILE.intro).replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (m, t, h) => `<a class="u" href="${h}">${t}</a>`)
+    : ph("Add a one-line intro: what you build and the role you're looking for.");
+  const gh = $("#hero-github");
+  if (PROFILE.githubProfile) gh.href = PROFILE.githubProfile;
+  else { gh.removeAttribute("href"); gh.classList.add("is-ph"); gh.textContent = "GitHub profile (add link)"; }
+  $("#footer-name").textContent = `© ${new Date().getFullYear()} ${PROFILE.name}`;
+
+  const el = $("#role-text");
+  const roles = filled(PROFILE.roles);
+  if (reduceMotion || roles.length < 2) { el.textContent = roles[0] || ""; return; }
+  let r = 0, c = 0, deleting = false;
+  (function tick() {
+    const word = roles[r];
+    el.textContent = word.slice(0, c);
+    if (!deleting && c === word.length) { deleting = true; return setTimeout(tick, 1600); }
+    if (deleting && c === 0) { deleting = false; r = (r + 1) % roles.length; }
+    c += deleting ? -1 : 1;
+    setTimeout(tick, deleting ? 40 : 75);
+  })();
+}
+
+/* Terminal */
+function renderTerminal() {
+  const hashes = ["a3f9c1e", "7be2d40", "1c08f5b"];
+  $("#term-commits").innerHTML = PROJECTS.map((p, i) => `
+    <button class="commit" type="button" data-target="project-${i}">
+      <span class="hash">${hashes[i % hashes.length]}</span>
+      ${i === 0 ? '<span class="ref">(HEAD)</span> ' : ""}feat: ${esc(p.title || `project ${i + 1} (add title)`)}
+      <span class="dim">· ${esc(filled(p.tech).join(", ") || "stack tbc")}</span>
+    </button>`).join("");
+  $("#term-commits").addEventListener("click", e => {
+    const b = e.target.closest(".commit");
+    if (!b) return;
+    const card = document.getElementById(b.dataset.target);
+    card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    card.classList.add("flash");
+    setTimeout(() => card.classList.remove("flash"), 1400);
+  });
+}
+
+/* Projects + filters */
+let activeFilter = "All";
+function renderProjects() {
+  $("#project-grid").innerHTML = PROJECTS.map((p, i) => `
+    <article class="card" id="project-${i}" data-tech="${esc(filled(p.tech).join("|"))}">
+      ${shot(p, i)}
+      <div class="card-body">
+        <div class="card-meta"><span>${val(p.year, "Year")}</span>${p.status ? `<span class="status ${/complete|done|live/i.test(p.status) ? "done" : ""}">${esc(p.status)}</span>` : ph("Status")}</div>
+        <h3>${val(p.title, `Project ${i + 1} title`)}</h3>
+        <p>${val(p.summary, "Add a 1–2 sentence summary of what this project does.")}</p>
+        <div class="tags">${filled(p.tech).length ? filled(p.tech).map(t => `<span class="tag">${esc(t)}</span>`).join("") : ph("Add tech used")}</div>
+        <div class="card-actions">
+          <button class="btn primary" type="button" data-open="${i}">Details</button>
+          ${linkBtn(p.codeUrl, "Code", icons.github, "Add GitHub link")}
+          ${p.liveUrl ? linkBtn(p.liveUrl, "Live", icons.ext) : ""}
+        </div>
+      </div>
+    </article>`).join("");
+
+  const all = [...new Set(PROJECTS.flatMap(p => filled(p.tech)))];
+  const filters = $("#filters");
+  if (!all.length) { filters.innerHTML = ""; return; }
+  filters.innerHTML = ["All", ...all].map(t => `<button class="chip" type="button" aria-pressed="${t === activeFilter}">${esc(t)}</button>`).join("");
+  filters.onclick = e => {
+    const chip = e.target.closest(".chip");
+    if (!chip) return;
+    activeFilter = chip.textContent;
+    filters.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c === chip));
+    document.querySelectorAll(".card").forEach(card => {
+      const tech = card.dataset.tech.split("|");
+      card.classList.toggle("dim", activeFilter !== "All" && !tech.includes(activeFilter));
+    });
+  };
+}
+
+/* Details dialog */
+const dlg = $("#project-dialog");
+function openProject(i) {
+  const p = PROJECTS[i];
+  const feats = filled(p.features);
+  $("#dlg-content").innerHTML = `
+    <div class="dlg-head">
+      <div><div class="eyebrow">${val(p.year, "Year")}${p.status ? " · " + esc(p.status) : ""}</div><h3 id="dlg-title">${val(p.title, `Project ${i + 1} title`)}</h3></div>
+      <button class="icon-btn" type="button" data-close aria-label="Close">${icons.close}</button>
+    </div>
+    ${shot(p, i)}
+    <p style="margin:0">${val(p.description || p.summary, "Add a longer description: the problem, what you built, and what you learned.")}</p>
+    <h4>Key features</h4>
+    ${feats.length ? `<ul>${feats.map(f => `<li>${esc(f)}</li>`).join("")}</ul>` : `<ul><li>${ph("Feature one")}</li><li>${ph("Feature two")}</li><li>${ph("Feature three")}</li></ul>`}
+    <h4>Built with</h4>
+    <div class="tags">${filled(p.tech).length ? filled(p.tech).map(t => `<span class="tag">${esc(t)}</span>`).join("") : ph("Add tech used")}</div>
+    <div class="card-actions">${linkBtn(p.codeUrl, "View code", icons.github, "Add GitHub link")}${linkBtn(p.liveUrl, "Live demo", icons.ext, "Add demo link (optional)")}</div>`;
+  if (typeof dlg.showModal === "function") dlg.showModal(); else dlg.setAttribute("open", "");
+}
+$("#project-grid").addEventListener("click", e => {
+  const b = e.target.closest("[data-open]");
+  if (b) openProject(+b.dataset.open);
+});
+dlg.addEventListener("click", e => {
+  if (e.target === dlg || e.target.closest("[data-close]")) dlg.close();
+});
+
+/* About, timeline, skills */
+function renderAbout() {
+  const paras = filled(PROFILE.about);
+  $("#about-text").innerHTML = paras.length
+    ? paras.map(t => `<p>${esc(t)}</p>`).join("")
+    : `<p>${ph("Paragraph 1: who you are and what you're studying.")}</p><p>${ph("Paragraph 2: what you enjoy building and the role you're looking for.")}</p>`;
+  $("#timeline").innerHTML = PROFILE.timeline.map(t => `
+    <li><div class="when">${val(t.when, "Dates")}</div><div><strong>${val(t.title, "Role or qualification")}</strong><span>${val(t.detail, "Where")}</span></div></li>`).join("");
+
+  $("#skills").innerHTML = Object.entries(PROFILE.skills).map(([group, list]) => `
+    <div class="skill-group"><h4>${esc(group)}</h4><div class="skill-list">
+      ${list.map(s => s ? `<span class="skill" tabindex="0">${esc(s)}</span>` : ph("Add skill")).join("")}
+    </div></div>`).join("");
+  const light = (skill, on) => PROJECTS.forEach((p, i) => {
+    if (filled(p.tech).some(t => t.toLowerCase() === skill.toLowerCase()))
+      document.getElementById("project-" + i).classList.toggle("flash", on);
+  });
+  document.querySelectorAll(".skill").forEach(s => {
+    ["mouseenter", "focus"].forEach(ev => s.addEventListener(ev, () => light(s.textContent, true)));
+    ["mouseleave", "blur"].forEach(ev => s.addEventListener(ev, () => light(s.textContent, false)));
+  });
+}
+
+/* Contact */
+function toast(msg) {
+  const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 1800);
+}
+function renderContact() {
+  const items = [
+    { label: "Email", value: PROFILE.email, copy: true, ph: "you@example.com" },
+    { label: "GitHub", value: PROFILE.githubProfile, link: true, ph: "github.com/your-username" },
+    { label: "LinkedIn", value: PROFILE.linkedin, link: true, ph: "linkedin.com/in/your-name" }
+  ];
+  $("#contact-list").innerHTML = items.map(it => `
+    <div class="contact-item">
+      <span class="label">${it.label}</span>
+      <span class="value">${it.value ? esc(it.value.replace(/^https?:\/\/(www\.)?/, "")) : ph(it.ph)}</span>
+      ${it.value && it.copy ? `<button class="btn" type="button" data-copy="${esc(it.value)}">Copy email</button>` : ""}
+      ${it.value && it.link ? `<a class="btn" href="${esc(it.value)}" target="_blank" rel="noopener">Open ${icons.ext}</a>` : ""}
+    </div>`).join("") + (PROFILE.cv ? `<div class="contact-item"><span class="label">CV</span><a class="btn primary" href="${esc(PROFILE.cv)}" target="_blank" rel="noopener">View my CV</a></div>` : "");
+  $("#contact-list").addEventListener("click", e => {
+    const b = e.target.closest("[data-copy]");
+    if (!b) return;
+    const text = b.dataset.copy;
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Selected. Press Ctrl+C to copy"); };
+    try { navigator.clipboard.writeText(text).then(() => toast("Email copied"), fallback); } catch { fallback(); }
+  });
+}
+
+/* Theme toggle */
+function setupTheme() {
+  const root = document.documentElement;
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch {}
+  if (saved) root.dataset.theme = saved;
+  $("#theme-toggle").addEventListener("click", () => {
+    const isDark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = isDark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch {}
+  });
+}
+
+/* Highlight the nav link for the section on screen */
+function setupNav() {
+  const links = [...document.querySelectorAll("nav a")];
+  const obs = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) links.forEach(l => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll("section[id]").forEach(s => obs.observe(s));
+}
+
+renderHero(); renderTerminal(); renderProjects(); renderAbout(); renderContact(); setupTheme(); setupNav();
+</script>
+</body></html>
